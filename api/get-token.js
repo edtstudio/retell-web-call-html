@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   try {
     const apiKey = "key_665003e454b2acfed755143fdf51"; // Your real API key
     const agentId = "agent_18b445a7e16eacfc6181d47388"; // Your real agent ID
