@@ -1,13 +1,13 @@
 export default async function handler(req, res) {
   try {
-    const apiKey = "key_66503e454b2acfed755134fdf51"; // Replace with your real key
-    const agentId = "agent_18b445a7e1ecacf6818d47388"; // Replace with your real agent ID
+    const apiKey = "key_66503e845b24aced755134dfd51"; // Your real API key
+    const agentId = "agent_18b445a7elecacf6818d47388"; // Your real agent ID
 
     const response = await fetch("https://api.retellai.com/v1/token", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
+        "x-api-key": apiKey,
       },
       body: JSON.stringify({ agent_id: agentId }),
     });
