@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Voice AI Agent</title>
+  <script src="https://unpkg.com/retell-client-js-sdk@latest"></script>
+</head>
+<body>
+  <button id="call-btn">Call AI Agent</button>
+  <script>
+    const client = new retell.RetellWebClient();
+
+    async function getAccessToken() {
+      // This should point to your backend endpoint to fetch the access token
+      const res = await fetch('https://your-backend.com/get-token');
+      const data = await res.json();
+      return data.access_token;
+    }
+
+    document.getElementById('call-btn').onclick = async () => {
+      const token = await getAccessToken();
+      await client.startCall({ accessToken: token });
+      client.on('call_started', () => console.log('Call started'));
+      client.on('call_ended', () => console.log('Call ended'));
+    };
+  </script>
+</body>
+</html>
