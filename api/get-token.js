@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   try {
-    const apiKey = "key_66503e845b24aced755134dfd51"; // Your real API key
-    const agentId = "agent_18b445a7elecacf6818d47388"; // Your real agent ID
+    const apiKey = "key_665003e454b2acfed755143fdf51"; // Your real API key
+    const agentId = "agent_18b445a7e16eacfc6181d47388"; // Your real agent ID
 
     const response = await fetch("https://api.retellai.com/v1/token", {
       method: "POST",
